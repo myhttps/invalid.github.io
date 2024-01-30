@@ -119,6 +119,7 @@ permalink: /experiment/00
     window.location.href = PTH.slice(0, -11);
   }
 </script>
+
 ```
 
 「URL の末尾に / が含まれていたら 1 文字消す」、「URL の末尾に /index.html が含まれていたら 11 文字消す」ってコードだと思います。
@@ -134,6 +135,7 @@ permalink: /experiment/00
     window.location.href = fourzerofour.slice(0, -11);
   }
 </script>
+
 ```
 
 [全体を見る](https://github.com/myhttps/myhttps.github.io/blob/master/404.html)とこんな感じ
