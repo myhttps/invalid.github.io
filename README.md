@@ -39,7 +39,7 @@ Git とか Jekyll とか知らない人によるメモ帳。簡単なものし�
   - article
     - index.md
 
-.md ファイルの名前は「**index.md**」推奨（私的）。URL が「<ユーザー名>.github.io/<index.md の親フォルダー名>/」になるからです。（例えば、例の場合は「myhttps.github.io/article/」になる。）
+.md ファイルの名前は「**index.md**」推奨（私的）。URL が `<ユーザー名>.github.io/<index.md の親フォルダー名>/` になるからです。（例えば、例の場合は `myhttps.github.io/article/` になる。）
 
 [.md ファイルの内容](https://github.com/myhttps/myhttps.github.io/blob/master/article/index.md?plain=1)（例）:
 
@@ -60,6 +60,11 @@ No information
 「layout: default」の「default」の部分には、手順 1 で作った .html ファイルの名前（拡張子抜き）を書きます。
 
 あとは Action 待ちです。[こちらが完成したページです](https://myhttps.github.io/article/)。手順 1 の default.html で .css とか指定していないのでまっさらですね状態。
+
+**注:** 手順 2 で .md ファイルの名前を index.md にしてないとき、または URL で拡張子まで表示したいときは、URL は `<.md ファイルの名前>.md` ではなく `<.md ファイルの名前>.html` になります。
+
+- https://myhttps.github.io/article/index.md
+- https://myhttps.github.io/article/index.html
 
 あとは頑張ってください（投げやり）
 
