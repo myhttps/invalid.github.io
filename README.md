@@ -160,5 +160,3 @@ permalink: /experiment/00
 https://myhttps.github.io/experiment/00/ と https://myhttps.github.io/experiment/00/index.html にアクセスしてみましょう。スラッシュなしの URL にリダイレクトしれくれました。
 
 Markdown 埋め込みとスラッシュ覆滅って併用できるんですかね？
-
-ふぅ～、結構簡単でしたね。お水飲んでくださいね～ :wave:
