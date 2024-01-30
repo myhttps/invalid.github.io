@@ -168,7 +168,7 @@ permalink: /experiment/00
 
 https://myhttps.github.io/experiment/00/ と https://myhttps.github.io/experiment/00/index.html にアクセスしてみましょう。スラッシュなしの URL にリダイレクトしれくれました。
 
-Markdown 埋め込みとスラッシュ覆滅は[併用できました](https://github.com/myhttps/myhttps.github.io/blob/master/article/2024013000/index.md?plain=1)
+Markdown 埋め込みとスラッシュ覆滅は[併用できました](https://github.com/myhttps/myhttps.github.io/blob/master/article/2024013000/index.md?plain=1)。（あと default.html 以外の .html ファイルを指定してみたり title 消してみたり）
 
 ```
 ---
