@@ -167,6 +167,9 @@ permalink: /experiment/00
   <meta charset="utf-8">
   <title>Welcome to 404</title>
 </head>
+<body>
+  <p>Welcome to 404</p>
+</body>
 </html>
 
 ```
