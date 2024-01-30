@@ -69,6 +69,13 @@ URL 末尾のスラッシュ（/）ですね。海外の解説サイトを真似
 
 ### .html にコードを貼り付ける
 
+例:
+
+- myhttps.github.io（リポジトリ）
+  - experiment
+    - 00
+      - index.html
+
 URL が https://myhttps.github.io/experiment/00/ になる場合、/experiment/00/index.html の先頭にこのコードを書きます。
 
 ```
