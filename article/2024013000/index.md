@@ -1,4 +1,5 @@
 ---
+title: Heiyou
 layout: custom
 permalink: /article/2024013000
 ---
