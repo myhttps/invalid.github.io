@@ -170,6 +170,8 @@ https://myhttps.github.io/experiment/00/ と https://myhttps.github.io/experimen
 
 Markdown 埋め込みとスラッシュ覆滅は[併用できました](https://github.com/myhttps/myhttps.github.io/blob/master/article/2024013000/index.md?plain=1)。（あと default.html 以外の layout を指定してみたり title を消してみたり）
 
+https://myhttps.github.io/article/2024013000
+
 ```
 ---
 layout: custom
