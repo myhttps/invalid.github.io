@@ -191,6 +191,7 @@ https://myhttps.github.io/article/2024013000
 
 ```
 ---
+title: Heiyou
 layout: custom
 permalink: /article/2024013000
 ---
