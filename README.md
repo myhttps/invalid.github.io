@@ -62,7 +62,7 @@ No information
 
 ~~「title: testl1」って書いてるけど、これはどこに表示されるのかわからん。解説サイトを真似しただけです。別に書かなくても動作しました。~~
 
-.md に書いた title は、.html の `{{ page.title }}` に挿入されるようです。どこにでも挿入されるので、`<meta proparty="og:title" content="{{ page.title }} - Site Name">` みたいな感じでも使える。
+.md に書いた title は、手順 1 で作った .html の `{{ page.title }}` に挿入されるようです。.html のどこにでも挿入されるので、`<meta proparty="og:title" content="{{ page.title }} - Site Name">` みたいな感じでも使える。
 
 `layout: default` の `default` の部分には、手順 1 で作った .html ファイルの名前（拡張子抜き）を書きます。
 
