@@ -97,7 +97,7 @@ permalink: /experiment/00
 
 ```
 
-「myhttps.github.io」から先を書きます。最後にスラッシュを入れません。
+「myhttps.github.io」から後の URL を書きます。最後にスラッシュを入れません。
 
 [全体を見る](https://github.com/myhttps/myhttps.github.io/blob/master/experiment/00/index.html)とこんな感じ
 
