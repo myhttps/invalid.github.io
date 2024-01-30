@@ -2,6 +2,11 @@ Mainly for testing
 
 Git とか Jekyll とか知らない人によるメモ帳。簡単なものしかないです。
 
+## 目次
+
+- [html に Markdown を埋め込む](#html-%E3%81%AB-markdown-%E3%82%92%E5%9F%8B%E3%82%81%E8%BE%BC%E3%82%80)
+- [GitHub Pages のトレイリング スラッシュを覆滅する](#github-pages-%E3%81%AE%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AA%E3%83%B3%E3%82%B0-%E3%82%B9%E3%83%A9%E3%83%83%E3%82%B7%E3%83%A5%E3%82%92%E8%A6%86%E6%BB%85%E3%81%99%E3%82%8B)
+
 ## html に Markdown を埋め込む
 
 ### 1. _layouts フォルダーと .html ファイルを作る
@@ -20,7 +25,7 @@ Git とか Jekyll とか知らない人によるメモ帳。簡単なものし�
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<title>testl0</title>
+<title>{{ page.title }} - testl0</title>
 </head>
 <body>
   {{ content }}
@@ -29,7 +34,7 @@ Git とか Jekyll とか知らない人によるメモ帳。簡単なものし�
 
 ```
 
-「{{ content }}」のところに Markdown が埋め込まれます。
+`{{ content }}` のところに Markdown が埋め込まれます。
 
 ### 2. 適当な場所に .md ファイルを作る
 
@@ -39,7 +44,7 @@ Git とか Jekyll とか知らない人によるメモ帳。簡単なものし�
   - article
     - index.md
 
-.md ファイルの名前は「**index.md**」推奨（私的）。URL が `<ユーザー名>.github.io/<index.md の親フォルダー名>/` になるからです。（例えば、例の場合は `myhttps.github.io/article/` になる。）
+.md ファイルの名前は「**index.md**」推奨（私的）。URL が `<ユーザー名>.github.io/<index.md の親フォルダー名>` になるからです。（例えば、例の場合は `myhttps.github.io/article` になる。）
 
 [.md ファイルの内容](https://github.com/myhttps/myhttps.github.io/blob/master/article/index.md?plain=1)（例）:
 
@@ -55,9 +60,11 @@ No information
 
 ```
 
-「title: testl1」って書いてるけど、これはどこに表示されるのかわからん。解説サイトを真似しただけです。別に書かなくても動作しました。
+~~「title: testl1」って書いてるけど、これはどこに表示されるのかわからん。解説サイトを真似しただけです。別に書かなくても動作しました。~~
 
-「layout: default」の「default」の部分には、手順 1 で作った .html ファイルの名前（拡張子抜き）を書きます。
+.md に書いた title は、.html の `{{ page.title }}` に挿入されるようです。
+
+`layout: default` の `default` の部分には、手順 1 で作った .html ファイルの名前（拡張子抜き）を書きます。
 
 あとは Action 待ちです。[こちらが完成したページです](https://myhttps.github.io/article/)。手順 1 の default.html で .css とか指定していないのでまっさらですね状態。
 
@@ -66,7 +73,7 @@ No information
 - https://myhttps.github.io/article/index.md
 - https://myhttps.github.io/article/index.html
 
-あとは頑張ってください（投げやり）
+CSS とかは、あとは頑張ってください（投げやり）
 
 ## GitHub Pages のトレイリング スラッシュを覆滅する
 
@@ -89,6 +96,8 @@ permalink: /experiment/00
 ---
 
 ```
+
+「myhttps.github.io」から先を書きます。最後にスラッシュを入れません。
 
 [全体を見る](https://github.com/myhttps/myhttps.github.io/blob/master/experiment/00/index.html)とこんな感じ
 
@@ -176,7 +185,7 @@ permalink: /experiment/00
 
 https://myhttps.github.io/experiment/00/ と https://myhttps.github.io/experiment/00/index.html にアクセスしてみましょう。スラッシュなしの URL にリダイレクトしてくれました。
 
-Markdown 埋め込みとスラッシュ覆滅は[併用できました](https://github.com/myhttps/myhttps.github.io/blob/master/article/2024013000/index.md?plain=1)。（あと default.html 以外の layout を指定してみたり title を消してみたり）
+Markdown 埋め込みとスラッシュ覆滅は[併用できました](https://github.com/myhttps/myhttps.github.io/blob/master/article/2024013000/index.md?plain=1)。（あと default.html 以外の layout を指定してみたり）
 
 https://myhttps.github.io/article/2024013000
 
