@@ -4,10 +4,14 @@ Git とか Jekyll とか知らない人によるメモ帳。簡単なものし�
 
 ## 目次
 
-- [html に Markdown を埋め込む](#html-%E3%81%AB-markdown-%E3%82%92%E5%9F%8B%E3%82%81%E8%BE%BC%E3%82%80)
+- [HTML に Markdown を埋め込む](#html-%E3%81%AB-markdown-%E3%82%92%E5%9F%8B%E3%82%81%E8%BE%BC%E3%82%80)
 - [GitHub Pages のトレイリング スラッシュを覆滅する](#github-pages-%E3%81%AE%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AA%E3%83%B3%E3%82%B0-%E3%82%B9%E3%83%A9%E3%83%83%E3%82%B7%E3%83%A5%E3%82%92%E8%A6%86%E6%BB%85%E3%81%99%E3%82%8B)
 
-## html に Markdown を埋め込む
+## HTML に Markdown を埋め込む
+
+最終的には、.md ファイルを作ると自動的に .html ファイルが作られるみたいな感じになります。
+
+例えば、[index.md](https://github.com/myhttps/myhttps.github.io/blob/master/article/index.md) ファイルを作ったとすると、リポジトリには表示されないけど GitHub Pages の内部的には [index.html](https://github.com/myhttps/myhttps.github.io/blob/master/article/index.html) が作成されている状態みたいな感じ。
 
 ### 1. _layouts フォルダーと .html ファイルを作る
 
@@ -17,7 +21,7 @@ Git とか Jekyll とか知らない人によるメモ帳。簡単なものし�
   - _layouts
     - default.html
 
-.html ファイルの名前は何でもいいみたいです（経験上）。私が見た解説サイトでは「default.html」を使っていました。
+.html ファイルの名前は何でもいいみたいです。私が見た解説サイトでは「default.html」を使っていました。
 
 [.html ファイルの内容](https://github.com/myhttps/myhttps.github.io/blob/master/_layouts/default.html)（例）:
 
@@ -62,16 +66,16 @@ No information
 
 ~~「title: testl1」って書いてるけど、これはどこに表示されるのかわからん。解説サイトを真似しただけです。別に書かなくても動作しました。~~
 
-.md に書いた title は、手順 1 で作った .html の `{{ page.title }}` に挿入されるようです。.html のどこにでも挿入されるので、`<meta proparty="og:title" content="{{ page.title }} - Site Name">` みたいな感じでも使える。
+.md ファイルに書いた `title: testl1` は、手順 1 で作った .html ファイルの `{{ page.title }}` に挿入されるようです。.html ファイルのどこにでも挿入されるので、`<meta proparty="og:title" content="{{ page.title }} - Site Name">` みたいな感じでも使える。
 
-`layout: default` の `default` の部分には、手順 1 で作った .html ファイルの名前（拡張子抜き）を書きます。
+`layout: ` の後に、手順 1 で作った .html ファイルの名前（拡張子抜き）を書きます。
 
-あとは Action 待ちです。[こちらが完成したページです](https://myhttps.github.io/article/)。手順 1 の default.html で .css とか指定していないのでまっさらですね状態。
+あとは Action 待ちです。[こちらが完成したページです](https://myhttps.github.io/article/)。手順 1 の default.html で CSS とか指定していないのでまっさらですね状態。
 
-**注:** 手順 2 で .md ファイルの名前を index.md にしてないとき、または URL で拡張子まで表示したいときは、URL は `<.md ファイルの名前>.md` ではなく `<.md ファイルの名前>.html` になります。
+**注:** 手順 2 で .md ファイルの名前を index.md にしてないとき、または URL を拡張子まで表示したいときは、URL は `<.md ファイルの名前>.md` ではなく `<.md ファイルの名前>.html` になります。
 
-- https://myhttps.github.io/article/index.md
-- https://myhttps.github.io/article/index.html
+- https://myhttps.github.io/article/index.md ではなく
+- https://myhttps.github.io/article/index.html になる
 
 CSS とかは、あとは頑張ってください（投げやり）
 
@@ -79,7 +83,7 @@ CSS とかは、あとは頑張ってください（投げやり）
 
 URL 末尾のスラッシュ（/）ですね。海外の解説サイトを真似しただけです。
 
-### .html にコードを貼り付ける
+### .html ファイルにコードを貼り付ける
 
 例:
 
@@ -97,25 +101,25 @@ permalink: /experiment/00
 
 ```
 
-「myhttps.github.io」から後の URL を書きます。最後にスラッシュを入れません。
+`permalink: ` の後に、「myhttps.github.io」から先の URL を書きます。最後にスラッシュを入れません。
 
-[全体を見る](https://github.com/myhttps/myhttps.github.io/blob/master/experiment/00/index.html)とこんな感じ
+[全体を見る](https://github.com/myhttps/myhttps.github.io/blob/master/experiment/00/index.html)とこんな感じ（先頭のプラス記号は違いをわかりやすくするためです）
 
 ```
----
-permalink: /experiment/00
----
-
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <title>Hello, world! 00</title>
-</head>
-<body>
-  <p>experiment</p>
-</body>
-
++ | ---
++ | permalink: /experiment/00
++ | ---
++ | 
+  | <!DOCTYPE html>
+  | <html lang="ja">
+  | <head>
+  |   <meta charset="utf-8">
+  |   <title>Hello, world! 00</title>
+  | </head>
+  | <body>
+  |   <p>experiment</p>
+  | </body>
+  | 
 ```
 
 これで https://myhttps.github.io/experiment/00 にアクセスしても、スラッシュありの URL にリダイレクトされなくなりました。パチパチ
@@ -145,7 +149,7 @@ permalink: /experiment/00
 
 「URL の末尾に / が含まれていたら 1 文字消す」、「URL の末尾に /index.html が含まれていたら 11 文字消す」ってコードだと思います。
 
-コード内の「PTH」は多分改変できます
+コード内の `PTH` という文字列はこんな感じに改変できます
 
 ```
 <script>
@@ -159,28 +163,28 @@ permalink: /experiment/00
 
 ```
 
-[全体を見る](https://github.com/myhttps/myhttps.github.io/blob/master/404.html)とこんな感じ
+[全体を見る](https://github.com/myhttps/myhttps.github.io/blob/master/404.html)とこんな感じ（先頭のプラス記号は違いをわかりやすくするためです）
 
 ```
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <script>
-    const PTH = window.location.href;
-    if (PTH.endsWith('/')) {
-      window.location.href = PTH.slice(0, -1);
-    } else if (PTH.endsWith('/index.html')) {
-      window.location.href = PTH.slice(0, -11);
-    }
-  </script>
-  <meta charset="utf-8">
-  <title>Welcome to 404</title>
-</head>
-<body>
-  <p>Welcome to 404</p>
-</body>
-</html>
-
+  | <!DOCTYPE html>
+  | <html lang="ja">
+  | <head>
++ |   <script>
++ |     const PTH = window.location.href;
++ |     if (PTH.endsWith('/')) {
++ |       window.location.href = PTH.slice(0, -1);
++ |     } else if (PTH.endsWith('/index.html')) {
++ |       window.location.href = PTH.slice(0, -11);
++ |     }
++ |   </script>
+  |   <meta charset="utf-8">
+  |   <title>Welcome to 404</title>
+  | </head>
+  | <body>
+  |   <p>Welcome to 404</p>
+  | </body>
+  | </html>
+  | 
 ```
 
 https://myhttps.github.io/experiment/00/ と https://myhttps.github.io/experiment/00/index.html にアクセスしてみましょう。スラッシュなしの URL にリダイレクトしてくれました。
