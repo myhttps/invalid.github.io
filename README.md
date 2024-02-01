@@ -189,7 +189,15 @@ permalink: /experiment/00
 
 https://myhttps.github.io/experiment/00/ と https://myhttps.github.io/experiment/00/index.html にアクセスしてみましょう。スラッシュなしの URL にリダイレクトしてくれました。
 
-myhttps.github.io/index.html（リポジトリ直下）にアクセスしたときに /index.html が消えずにそのまま残ります。これは index.html に 404.html で貼り付けたコードを[そのまま使う](https://github.com/myhttps/myhttps.github.io/blob/master/index.html)ことで解決できます。（省略記号は省略を示します）
+流れとしてはこうなると思います。
+
+1. /exmeripent/00/ にアクセスする。
+2. 404.html に到達する。
+3. 404.html が URL 末尾のスラッシュを削除する。
+4. /exmeripent/00 にアクセスする。
+5. ページが見つかり、/exmeripent/00/index.html の内容を表示する。
+
+myhttps.github.io/index.html（リポジトリ直下）にアクセスしたときに /index.html が消えずにそのまま残ってしまいます。これは index.html に 404.html で貼り付けたコードを[そのまま使う](https://github.com/myhttps/myhttps.github.io/blob/master/index.html)ことで解決できます。（省略記号は省略を示します）
 
 ```
   | <!DOCTYPE html>
