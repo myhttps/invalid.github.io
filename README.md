@@ -211,7 +211,7 @@ myhttps.github.io/index.html（リポジトリ直下）にアクセスしたと�
   |   <link rel="canonical" href="https://myhttps.github.io/"/>
 + |   <script>
 + |     const PTH = window.location.href;
-+ |     if (PTH.endsWith('/index.html')) {
++ |     if (PTH.endsWith('o/index.html')) {
 + |       window.location.href = PTH.slice(0, -11);
 + |     }
 + |   </script>
