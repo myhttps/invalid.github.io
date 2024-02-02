@@ -199,7 +199,7 @@ https://myhttps.github.io/experiment/00/ と https://myhttps.github.io/experimen
 
 myhttps.github.io/index.html（リポジトリ直下）にアクセスしたときに /index.html が消えずにそのまま残ってしまいます。これは index.html に 404.html で貼り付けたコードを[そのまま使う](https://github.com/myhttps/myhttps.github.io/blob/master/index.html)ことで解決できます。（省略記号は省略を示します）
 
-コード内の `endsWith` という文字列のあとに `.io/index.html` または `https://<ユーザー名>.github.io/index.html` を指定すると、ローカルでプレビューできるようになります。
+コード内の `endsWith` という文字列のあとを `.io/index.html` または `https://<ユーザー名>.github.io/index.html` に変更すると、ローカルでプレビューできるようになります。
 
 ```
   | <!DOCTYPE html>
