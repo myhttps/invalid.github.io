@@ -197,7 +197,7 @@ https://myhttps.github.io/experiment/00/ と https://myhttps.github.io/experimen
 4. /exmeripent/00 にアクセスする。
 5. ページが見つかり、/exmeripent/00/index.html の内容を表示する。
 
-myhttps.github.io/index.html（リポジトリ直下）にアクセスしたときに /index.html が消えずにそのまま残ってしまいます。これは index.html に 404.html で貼り付けたコードを[そのまま使う](https://github.com/myhttps/myhttps.github.io/blob/master/index.html)ことで解決できます。（省略記号は省略を示します）
+myhttps.github.io/index.html（リポジトリ直下）にアクセスしたときに /index.html が消えずにそのまま残ってしまいます。これは index.html に 404.html で貼り付けたコードを[そのまま使う](https://github.com/myhttps/myhttps.github.io/blob/master/index.html)ことで解決できます。`.io/index.html` にすると、ローカルでプレビューできるようになります。（省略記号は省略を示します）
 
 ```
   | <!DOCTYPE html>
@@ -211,7 +211,7 @@ myhttps.github.io/index.html（リポジトリ直下）にアクセスしたと�
   |   <link rel="canonical" href="https://myhttps.github.io/"/>
 + |   <script>
 + |     const PTH = window.location.href;
-+ |     if (PTH.endsWith('o/index.html')) {
++ |     if (PTH.endsWith('.io/index.html')) {
 + |       window.location.href = PTH.slice(0, -11);
 + |     }
 + |   </script>
