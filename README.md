@@ -83,6 +83,9 @@ CSS とかは、あとは頑張ってください（投げやり）
 
 URL 末尾のスラッシュ（/）ですね。海外の解説サイトを真似しただけです。
 
+**注:** index.html が含まれていないディレクトリを表示しようとすると、ページの更新が止まらなくなることがあります。
+* 例: [_layouts](https://github.com/myhttps/myhttps.github.io/tree/master/_layouts) には index.html がありません。この状態で https://myhttps.github.io/_layouts/ にアクセスすると、ページが更新され続け、デバイスに負荷がかかる恐れがあります。まあ余程のことがないと _layouts/ にはアクセスしないと思いますが。
+
 ### .html ファイルにコードを貼り付ける
 
 例:
